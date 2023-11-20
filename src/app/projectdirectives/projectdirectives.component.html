@@ -1,0 +1,37 @@
+<p>projectdirectives works!</p>
+<div class="container">
+    <!-- <p>{{para}}</p> -->
+    <div class="">
+        <app-search (customevent)="recivedSearchVal($event)"></app-search>
+        <app-filter (filterval)="receivedval($event)"></app-filter>
+    </div>
+    <div class="boxes d-flex justify-content-center" >
+        <ng-container *ngFor="let p of products; let i = index">
+            <div class="box border p-3" *ngIf= "prodcutval === 'All' || p.avail === prodcutval" >
+                <ng-container *ngIf="p.name.toLowerCase().includes(searchval)">
+                    <img [src]="p.img" alt="img{{i+1}}">
+                <div class="contents">
+                   <h3>{{p.name}}</h3>
+                   <p>{{p.disc}}</p>
+                   <!-- <p [ngStyle]="{'color' : p.avail === 'Available' ? 'green' : 'red'}">{{p.avail}}</p> -->
+                   <p [ngStyle]="{color : getColor(p.avail)}">{{p.avail}}</p>
+                   <p>${{p.price}}</p>
+
+                  <div class="btns d-flex" *ngIf="p.avail === 'Available' else  notifyme ">
+                      <button class="btn btn-success mx-1" (click)="addToCart(i)">Add to cart</button>
+                      <button class="btn btn-dark mx-1">Buy Now</button>
+                  </div>
+                </div>
+                </ng-container>
+              </div>
+        </ng-container>
+    </div>
+    <ng-template #notifyme> 
+        <button class="btn btn-dark mx-1">Notify Me</button>
+    </ng-template>
+</div>
+<section class="products-details" *ngIf="bool">
+    <div class="container">
+        <app-child [userD]="parentuserDetails" (cstmevt)="receivefn($event)"></app-child> 
+    </div>
+</section>

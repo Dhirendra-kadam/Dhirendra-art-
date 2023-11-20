@@ -1,0 +1,7 @@
+<p>filter works!</p>
+<div class="filter p-3 mx-auto w-50 text-center">
+    <label for="" class="form-lable" ><b class="me-3">Filter:</b></label>
+    <input type="radio" name="product" value="All" [(ngModel)]="prodcutval" id="" class="mx-1" (change)="onchange()"> All()
+    <input type="radio" name="product" value="Available" [(ngModel)]="prodcutval" id="" class="mx-1" (change)="onchange()"> Available()
+    <input type="radio" name="product" value="Unavailable" [(ngModel)]="prodcutval" id="" class="mx-1" (change)="onchange()"> Unavailable()
+</div>

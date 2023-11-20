@@ -1,0 +1,25 @@
+<p>directives1 works!</p>
+<div class="detailes">
+    <div class="container">
+        <table class="table w-50 mx-auto border border-dark my-5 text-center">
+           <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Attendance</th>
+           </tr>
+           <tr *ngFor="let data of newUserDetails">
+            <ng-container>
+                <td>{{data.name}}</td>
+                <td>{{data.email}}</td>
+                <td>{{data.phone}}</td>
+                <td [ngStyle]="{color:data.att==='present' ? 'green' : 'red'}">{{data.att}}</td>
+            </ng-container>
+           </tr>
+        </table>
+        <div class="w-75 mx-auto">
+            <p *ngIf="bool">boolean is true</p>
+            <p *ngIf="!bool">boolean is false</p>
+        </div>
+    </div>
+</div>

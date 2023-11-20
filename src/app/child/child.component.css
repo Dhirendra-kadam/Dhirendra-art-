@@ -1,0 +1,10 @@
+.box{
+    width: 300px;
+}
+.boz img{
+    height: 200px;
+}
+.products-details .box{
+    width: 500px;
+    margin: 50px auto;
+}

@@ -1,0 +1,63 @@
+<p>databinding works!</p>
+<h1>{{title}}</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="box border p-30">
+                <img style="height:200px" [src]="product1" class="w-100" alt="">
+                <div class="contents">
+                    <h1>{{product1Title}}</h1>
+                    <p>1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus iusto magni voluptatem
+                        tempora
+                        modi veritatis eos, aliquid aliquam quam corrupti!</p>
+                    <p>$58</p>
+                    <div class="btns">
+                        <button class="btn btn-warning me-2">Buy Now</button>
+                        <button class="btn btn-dark me-2">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="box border p-30">
+                <img style="height:200px" [src]="product2" class="w-100" alt="">
+                <div class="contents">
+                    <h1>{{product2Title}}</h1>
+                    <p>2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus iusto magni voluptatem
+                        tempora
+                        modi veritatis eos, aliquid aliquam quam corrupti!</p>
+                    <p>$58</p>
+                    <div class="btns">
+                        <button class="btn btn-warning me-2">Buy Now</button>
+                        <button class="btn btn-dark me-2">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="box border p-30">
+                <img style="height:200px" [src]="product3" class="w-100" alt="">
+                <div class="contents">
+                    <h1>{{product3Title}}</h1>
+                    <p>3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus iusto magni voluptatem
+                        tempora
+                        modi veritatis eos, aliquid aliquam quam corrupti!</p>
+                    <p>$58</p>
+                    <div class="btns">
+                        <button class="btn btn-warning me-2">Buy Now</button>
+                        <button class="btn btn-dark me-2">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <p class="border w-50 mx-auto bg-dark text-light my-5 p-5">{{para ? 'Hello' : ''}}</p>
+</div>
+
+<div class="border w-50 mx-auto bg-dark text-light my-5 p-5">
+    <input type="text" [value]="placeholder" (input)="onInput($event)">
+    <p>{{placeholder}}</p> 
+</div>

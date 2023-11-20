@@ -1,0 +1,43 @@
+<p>form works!</p>
+<div class="container">
+    <div class="input mr-10">
+        <div class="form-group m-3">
+            <label for="Name" class="for-label" >Name</label>
+            <input type="text" class="form-control" id="Name"(input)="onInput1($event)">
+        </div>
+        <div class="form-group m-3">
+            <label for="Email" class="for-label">Email</label>
+            <input type="email" class="form-control" id="Email"(input)="onInput2($event)">
+        </div>
+        <div class="form-group m-3">
+            <label for="Phone" class="for-label">Phone</label>
+            <input type="tel" class="form-control" id="Phone"(input)="onInput3($event)">
+        </div>
+        <!-- <div class="form-group m-3">
+            <label for="file" class="for-label">image</label>
+            <input type="file" class="form-control" id="img" (input)="onInput4($event)">
+        </div> -->
+        <input type="submit" value="submit" (click)="onclick()" class="btn btn-primary">
+    </div>
+    <div class="display">
+        <div>
+            <h5>Name: {{newUserDetails.name}} </h5>
+        </div>
+        <div>
+            <h5>Email:{{newUserDetails.email}}</h5>
+        </div>
+        <div>
+            <h5>Phone: {{newUserDetails.phone}}</h5>
+        </div>
+        <!-- <div>
+            <h5>Image:
+                <div class="im">
+                    <img src="../../assets/img/camera.jpg" alt="">
+                     <div class="image h-10"> {{userDetail.image}}</div>
+                     <img src="{{userDetail.imageUrl}}">
+                    {{newUserDetails.image}}
+                </div>
+            </h5>
+        </div> -->
+    </div>
+</div>

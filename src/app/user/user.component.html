@@ -1,0 +1,28 @@
+<p>user works!</p>
+<section class="users">
+    <div class="container">
+        <div class="user my-5">
+            <app-update-user></app-update-user>
+            <table class="table text-center">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Adderss</th>
+
+                </tr>
+                <tr *ngFor="let user of userapiDetail; let i = index">
+                    <td>{{user.id}}</td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.phone}}</td>
+                    <td>{{user.address.city}}</td>
+                    <td><button class="btn btn-danger" (click)="dltuser(i)">Delete</button></td>
+
+                </tr>
+
+            </table>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="item border p-5 my-5 w-75 mx-auto">
+    <div class="form-group">
+      <label for="">add item:</label>
+
+      <input
+        type="text"
+        class="form-control"
+        id="additem"
+        [(ngModel)]="value"
+      />
+      <button class="btn btn-primary mt-2" (click)="AddItem()">Add Item</button>
+    </div>
+    <div class="item">
+      <app-showlist [list]="myVal"></app-showlist>
+    </div>
+  </div>
+</div>

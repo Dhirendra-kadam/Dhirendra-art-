@@ -1,0 +1,46 @@
+<p>container works!</p>
+
+<section>
+    <div class="container">
+        <div class="Students w-75 mx-auto my-5 border p-5">
+            <div class="border p-1">
+                <label for="form-label"><strong class="me-5">Filter:</strong></label>
+                All: <input type="radio" name="attend" value="All" (click)="onChange()" [(ngModel)]="changeval"
+                    class="form-check-input me-2">
+                Present: <input type="radio" name="attend" value="Present" (click)="onChange()" [(ngModel)]="changeval"
+                    class="form-check-input me-2">
+                Absent: <input type="radio" name="attend" value="Absent" (click)="onChange()" [(ngModel)]="changeval"
+                    class="form-check-input me-2">
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Attendance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let s of studentData">
+                        <ng-container *ngIf="changeval === 'All' || s.attend === changeval">
+                            <td>{{s.id}}</td>
+                            <td>{{s.name}}</td>
+                            <td>{{s.age}}</td>
+                            <td [ngStyle]="{color : s.attend === 'Present' ? 'green' : 'red'}">{{s.attend}}</td>
+                        </ng-container>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div>
+        <ng-container ><!--*ngIf="bool ; else fal"-->
+            <!-- {{name | uppercase}} -->
+            {{price | number : "1.0-0"}}
+        </ng-container>
+        <ng-template #fal>
+            Hello From  ng-template
+        </ng-template>
+    </div>
+</section>

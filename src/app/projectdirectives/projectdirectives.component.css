@@ -1,0 +1,13 @@
+.box{
+    width: 33.33%;
+}
+.boz img{
+    height: 200px;
+}
+.boxes{
+    flex-wrap: wrap;
+}
+.products-details .box{
+    width: 500px;
+    margin: 50px auto;
+}
